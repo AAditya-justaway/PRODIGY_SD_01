@@ -1,39 +1,39 @@
-def celsius_to_fahrenheit(celsius):
+def c_to_f(celsius):
     return (celsius * 9/5) + 32
 
-def celsius_to_kelvin(celsius):
+def c_to_k(celsius):
     return celsius + 273.15
 
-def fahrenheit_to_celsius(fahrenheit):
+def f_to_c(fahrenheit):
     return (fahrenheit - 32) * 5/9
 
-def fahrenheit_to_kelvin(fahrenheit):
+def f_to_k(fahrenheit):
     return (fahrenheit + 459.67) * 5/9
 
-def kelvin_to_celsius(kelvin):
+def k_to_c(kelvin):
     return kelvin - 273.15
 
-def kelvin_to_fahrenheit(kelvin):
+def k_to_f(kelvin):
     return kelvin * 9/5 - 459.67
 
 def main():
     temperature = float(input("Enter the temperature value: "))
-    original_unit = input("Enter the original unit of measurement (Celsius, Fahrenheit, or Kelvin): ").lower()
+    original_unit = input("Enter the original unit of measurement (C, F, or K): ").upper()
 
-    if original_unit == "celsius":
-        fahrenheit = celsius_to_fahrenheit(temperature)
-        kelvin = celsius_to_kelvin(temperature)
+    if original_unit == "C":
+        fahrenheit = c_to_f(temperature)
+        kelvin = c_to_k(temperature)
         print(f"{temperature} degrees Celsius is equal to {fahrenheit} degrees Fahrenheit and {kelvin} Kelvin.")
-    elif original_unit == "fahrenheit":
-        celsius = fahrenheit_to_celsius(temperature)
-        kelvin = fahrenheit_to_kelvin(temperature)
+    elif original_unit == "F":
+        celsius = f_to_c(temperature)
+        kelvin = f_to_k(temperature)
         print(f"{temperature} degrees Fahrenheit is equal to {celsius} degrees Celsius and {kelvin} Kelvin.")
-    elif original_unit == "kelvin":
-        celsius = kelvin_to_celsius(temperature)
-        fahrenheit = kelvin_to_fahrenheit(temperature)
+    elif original_unit == "K":
+        celsius = k_to_c(temperature)
+        fahrenheit = k_to_f(temperature)
         print(f"{temperature} Kelvin is equal to {celsius} degrees Celsius and {fahrenheit} degrees Fahrenheit.")
     else:
-        print("Invalid unit of measurement. Please enter Celsius, Fahrenheit, or Kelvin.")
+        print("Invalid unit of measurement. Please enter C, F, or K.")
 
 if __name__ == "__main__":
     main()
